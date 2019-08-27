@@ -21,10 +21,10 @@
 
     <!-- Enter your Full name -->
         <EditText
-            android:id="@+id/regTxtFullname"
+            android:id="@+id/regTxtFirstName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/Fullname"
+            android:hint="@string/FirstName"
             android:ems="10"
             android:inputType="text"
             android:layout_marginTop="15dp"
@@ -32,10 +32,10 @@
 
     <!-- Enter your User name -->
         <EditText
-            android:id="@+id/regTxtUsername"
+            android:id="@+id/regTxtLastName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/Username"
+            android:hint="@string/LastName"
             android:ems="10"
             android:inputType="text"
             android:layout_marginTop="15dp"
@@ -66,12 +66,12 @@
 
     <!-- Enter your password (Confirmation) -->
         <EditText
-            android:id="@+id/regTxtConfirmPassword"
+            android:id="@+id/regTxtMobNumb"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/ConfirmPassword"
+            android:hint="@string/Mobile"
             android:ems="10"
-            android:inputType="textPassword"
+            android:inputType="number"
             android:layout_marginTop="15dp"
             android:textSize="25sp"/>
 

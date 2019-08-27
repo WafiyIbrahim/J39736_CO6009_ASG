@@ -3,9 +3,9 @@
     <string name="action_settings">Settings</string>
     <string name="EmailAddress">Email Address</string>
     <string name="Password">Password</string>
-    <string name="ConfirmPassword">Confirm Password</string>
-    <string name="Username">Username</string>
-    <string name="Fullname">Fullname</string>
+    <string name="Mobile">Mobile Number</string>
+    <string name="LastName">Last Name</string>
+    <string name="FirstName">Fisrt Name</string>
     <string name="Logout">Logout</string>
     <string name="passwordCaps">PASSWORD</string>
     <string name="email_addressCaps">EMAIL ADDRESS</string>
@@ -16,4 +16,12 @@
     <string name="LogoDesc">Al-Huffaz Manaement Official Logo</string>
     <string name="Register">REGISTER</string>
     <string name="RegPage">New User Registration</string>
+    <string name="input_error_invalidEmailAddress">Sorry! Your email is Invalid. Please try again.</string>
+    <string name="input_error_emptyEmailAddress">Please enter your email address.</string>
+    <string name="input_error_emptyPassword">Please enter your password.</string>
+    <string name="input_error_invalidPassword">Your password should have more than 6 character.</string>
+    <string name="input_error_emptyFirstName">Please fill in your First name.</string>
+    <string name="input_error_emptyLastName">Please enter your Last name.</string>
+    <string name="input_error_emptyMobileNumb">Please enter you Mobile Number.</string>
+    <string name="input_error_invalidMobileNumb">Sorry! Your Mobile Number is invalid. Please try again.</string>
 </resources>

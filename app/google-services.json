@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "838031947833",
+    "firebase_url": "https://alhuffazmanagement-ff13f.firebaseio.com",
+    "project_id": "alhuffazmanagement-ff13f",
+    "storage_bucket": "alhuffazmanagement-ff13f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:838031947833:android:0e453b754e17b6a1",
+        "android_client_info": {
+          "package_name": "com.example.predator.hi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "838031947833-0plhgj1788r5vlikoknjv9e0ie1h7g20.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.predator.hi",
+            "certificate_hash": "849fa96294774b27b37898851476763b01f44435"
+          }
+        },
+        {
+          "client_id": "838031947833-tiliablu8076j7pjjpcobaecl65ijhbo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA5SGbJDdndfXpqa0yLgFw6VhOWdkaKsHY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "838031947833-tiliablu8076j7pjjpcobaecl65ijhbo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

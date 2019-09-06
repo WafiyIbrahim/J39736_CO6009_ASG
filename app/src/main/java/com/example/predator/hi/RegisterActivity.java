@@ -45,7 +45,6 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
             startActivity(new Intent(getApplicationContext(), MenuActivity.class));
         }
 
-
         ProgressDialog  = new ProgressDialog(this);
 
         signInText           = (TextView) findViewById(R.id.signInText);
@@ -63,11 +62,11 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
 
     private void UserRegistration(){
-        final String emailAddress  = regTxtEmail.getText().toString().trim();
-        String usersPassword = regTxtPassword.getText().toString().trim();
-        final String userFirstName = regTxtFirstNamename.getText().toString().trim();
-        final String userLastName  = regTxtLastNamername.getText().toString().trim();
-        final String usersMobNumb  = regTxtMobNumb.getText().toString().trim();
+        final String emailAddress       = regTxtEmail.getText().toString().trim();
+        String usersPassword            = regTxtPassword.getText().toString().trim();
+        final String userFirstName      = regTxtFirstNamename.getText().toString().trim();
+        final String userLastName       = regTxtLastNamername.getText().toString().trim();
+        final String usersMobNumb       = regTxtMobNumb.getText().toString().trim();
 
         //Validation process for empty FirstName
         if(TextUtils.isEmpty(userFirstName)){
@@ -104,11 +103,12 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         }
 
         //Validation process for Password that is less than 6 character
-        if(usersPassword. length() < 6){
+        if(usersPassword.length() < 6){
             regTxtPassword.setError(getString(R.string.input_error_invalidPassword));
             regTxtPassword.requestFocus();
             return;
         }
+
 
         if(TextUtils.isEmpty(usersMobNumb)){
             regTxtMobNumb.setError(getString(R.string.input_error_emptyMobileNumb));
@@ -136,13 +136,13 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                         if(task.isSuccessful()){
                             //If successful, data will be stored in DB.
 
-                            HuffazClient Client = new HuffazClient(
+                            HuffazClient client = new HuffazClient(
                                     emailAddress,userFirstName, userLastName, usersMobNumb
                             );
 
-                            FirebaseDatabase.getInstance().getReference("Huffaz Client")
+                             FirebaseDatabase.getInstance().getReference("HuffazClient")
                             .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
-                                    .setValue(Client).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                    .setValue(client).addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if(task.isSuccessful()){

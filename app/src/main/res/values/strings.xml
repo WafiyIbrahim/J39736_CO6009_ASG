@@ -24,4 +24,40 @@
     <string name="input_error_emptyLastName">Please enter your Last name.</string>
     <string name="input_error_emptyMobileNumb">Please enter you Mobile Number.</string>
     <string name="input_error_invalidMobileNumb">Sorry! Your Mobile Number is invalid. Please try again.</string>
+    <string name="AboutUs">Al-Huffaz Management offers Iqra\' and Al-Quran Recitation Classes at your private home or suitable place of your own choosing. Not only that, we also provides services to lead prayers, Islamic performance, giving Religious talks and etc.</string>
+    <string name="QuranIqraClass"><![CDATA[Quran & Iqra Class]]></string>
+    <string name="ClientName">Client Name</string>
+    <string name="ChoosePackage">Mengaji Packages</string>
+    <string name="HomeAddress">Home Address</string>
+    <string name="ChooseTeacher">Preferred Teacher</string>
+    <string name="ChooseDay">Preferred Day</string>
+    <string name="ChooseTime">Preferred Time</string>
+    <string name="preferredtime">Time ex: "8AM - 9AM / 8PM - 9PM"</string>
+    <string name="religious_packages">Religious Packages</string>
+
+    <array name="MengajiPackages">
+        <item>-- Please select --</item>
+        <item>Al-Quran Class</item>
+        <item>Iqra Class</item>
+        <item>Al-Quran and Iqra Class</item>
+        <item>Tarannum Bil Quran Class</item>
+    </array>
+
+    <array name="PreferredTeacher">
+        <item>-- Please select --</item>
+        <item>Ustaz/Male</item>
+        <item>Ustazah/Female</item>
+    </array>
+
+    <array name="PreferredDay">
+        <item>-- Please select --</item>
+        <item>Monday</item>
+        <item>Tuesday</item>
+        <item>Wednesday</item>
+        <item>Thursday</item>
+        <item>Friday</item>
+        <item>Saturday</item>
+        <item>Sunday</item>
+    </array>
+
 </resources>

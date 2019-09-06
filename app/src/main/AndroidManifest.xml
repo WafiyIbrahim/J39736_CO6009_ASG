@@ -11,8 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-        <!-- Start of Splash Screen Activity -->
+        <activity android:name=".Services"></activity>
+        <activity android:name=".MengajiActivity" />
+        <activity android:name=".BookingActivity" /> <!-- Start of Splash Screen Activity -->
         <activity
             android:name=".LoadingScreen"
             android:screenOrientation="portrait"
@@ -27,21 +28,21 @@
         <activity
             android:name=".LoginActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar"></activity> <!-- End of Login Activity -->
+            android:theme="@style/AppTheme.NoActionBar" /> <!-- End of Login Activity -->
         <!-- Start of Main Activity -->
         <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar"></activity> <!-- End of Main Activity -->
+            android:theme="@style/AppTheme.NoActionBar" /> <!-- End of Main Activity -->
         <!-- Start of Register Activity -->
         <activity
             android:name=".RegisterActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".MenuActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

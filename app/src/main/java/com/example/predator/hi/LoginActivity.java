@@ -73,7 +73,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         ProgressDialog.setMessage("We are currently logging you in. Please wait.");
         ProgressDialog.show();
 
-        //Create user's email and password
+        //LogIn user's email and password
         firebaseAuth.signInWithEmailAndPassword(emailAddress,usersPassword)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override

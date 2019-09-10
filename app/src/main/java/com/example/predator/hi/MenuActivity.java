@@ -16,6 +16,7 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
     private FirebaseAuth firebaseAuth;
     private CardView btn_logout;
     private CardView btn_booking;
+    private CardView btn_MyBooking;
     TextView usersEmail;
 
     @Override
@@ -35,11 +36,13 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
         usersEmail = (TextView) findViewById(R.id. usersEmail);
         btn_logout = (CardView) findViewById(R.id. btn_logout);
         btn_booking = (CardView) findViewById(R.id. btn_booking);
+        btn_MyBooking = (CardView) findViewById(R.id.btn_MyBooking);
 
         usersEmail.setText("Welcome " +account.getEmail());
 
         btn_logout.setOnClickListener(this);
         btn_booking.setOnClickListener(this);
+        btn_MyBooking.setOnClickListener(this);
     }
 
     @Override
@@ -52,6 +55,11 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
 
         if (v == btn_booking){
             startActivity(new Intent(this, BookingActivity.class));
+            finish();
+        }
+
+        if (v == btn_MyBooking){
+            startActivity(new Intent(this, MybookingActivity.class));
             finish();
         }
     }

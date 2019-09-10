@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Services"></activity>
+        <activity android:name=".MybookingActivity"></activity>
+        <activity android:name=".HomeservicesActivity" />
         <activity android:name=".MengajiActivity" />
         <activity android:name=".BookingActivity" /> <!-- Start of Splash Screen Activity -->
         <activity

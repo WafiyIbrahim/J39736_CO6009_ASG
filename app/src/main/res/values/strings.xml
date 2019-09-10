@@ -38,6 +38,7 @@
     <array name="MengajiPackages">
         <item>-- Please select --</item>
         <item>Al-Quran Class</item>
+        <item>Al-Quran Memorization Class</item>
         <item>Iqra Class</item>
         <item>Al-Quran and Iqra Class</item>
         <item>Tarannum Bil Quran Class</item>
@@ -58,6 +59,15 @@
         <item>Friday</item>
         <item>Saturday</item>
         <item>Sunday</item>
+    </array>
+
+    <array name="ReligiuosPackages">
+        <item>-- Please select --</item>
+        <item>Arrabic Language Class</item>
+        <item>SSSRU Tution Class</item>
+        <item>Leading Prayers</item>
+        <item>Religious Art - Bedikir</item>
+        <item>Religious Art - Tausyeh</item>
     </array>
 
 </resources>

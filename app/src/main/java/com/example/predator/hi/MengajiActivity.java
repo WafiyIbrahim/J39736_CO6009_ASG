@@ -33,6 +33,7 @@ public class MengajiActivity extends AppCompatActivity implements View.OnClickLi
     private Spinner spinnerTeacher;
     private Spinner spinnerDay;
     private Button btnBookMengaji;
+    private String account;
     TextView txtViewClientName;
     private FirebaseAuth firebaseAuth;
 
@@ -42,6 +43,8 @@ public class MengajiActivity extends AppCompatActivity implements View.OnClickLi
         setContentView(R.layout.activity_mengaji);
 
         firebaseAuth    = FirebaseAuth.getInstance();
+
+        account = firebaseAuth.getCurrentUser().toString();
 
         /*if (firebaseAuth.getCurrentUser() !=null){
             finish();
@@ -68,7 +71,8 @@ public class MengajiActivity extends AppCompatActivity implements View.OnClickLi
     }
 
     private void UserBooking(){
-
+        String key = FirebaseBooking.push().getKey(); //https://stackoverflow.com/a/37788893
+        String account = firebaseAuth.getCurrentUser().getUid();
         String timePreference = preferredTime.getText().toString().trim();
         String clientAddress  = HomeAddress.getText().toString().trim();
         String choosePackage  = spinnerPackage.getSelectedItem().toString();
@@ -77,15 +81,16 @@ public class MengajiActivity extends AppCompatActivity implements View.OnClickLi
 
       if(!TextUtils.isEmpty(timePreference)){
 
-          FirebaseUser account = firebaseAuth.getCurrentUser();
+          /*FirebaseUser account = firebaseAuth.getCurrentUser();
 
-          String bookingId = account.getUid();
+          String bookingId = account.getUid();*/
 
-          HuffazBookingClass classBooking = new HuffazBookingClass(timePreference, clientAddress, choosePackage,chooseTeacher,chooseDay);
+          HuffazBookingClass classBooking = new HuffazBookingClass(account, timePreference, clientAddress, choosePackage,chooseTeacher,chooseDay);
 
           /*FirebaseUser account = firebaseAuth.getCurrentUser();*/
 
-          FirebaseBooking.child(bookingId).setValue(classBooking);
+         // FirebaseBooking.child(bookingId).setValue(classBooking);
+          FirebaseBooking.child(key).setValue(classBooking);
 
         /*FirebaseDatabase.getInstance().getReference("HuffazMenagjiBooking");
         FirebaseBooking.child(bookingId).setValue(classBooking);*/

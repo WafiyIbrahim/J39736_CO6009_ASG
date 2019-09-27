@@ -19,17 +19,18 @@ public class ServicesBookingList extends ArrayAdapter <HuffazBookingServices> {
 
     public ServicesBookingList(Activity context, List<HuffazBookingServices> listServices){
 
-        super ( context, R.layout.mengaji_layout, listServices);
+        super ( context, R.layout.services_layout, listServices);
         this.context = context;
         this.listServices = listServices;
     }
+
 
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         LayoutInflater inflater = context.getLayoutInflater();
 
-        View  bookingServicesList= inflater.inflate(R.layout.mengaji_layout, null, true);
+        View  bookingServicesList= inflater.inflate(R.layout.services_layout, null, true);
 
         TextView clientEvent        = (TextView) bookingServicesList.findViewById(R.id.clientEvent);
         TextView spinnerPackage     = (TextView) bookingServicesList.findViewById(R.id.spinnerPackage);

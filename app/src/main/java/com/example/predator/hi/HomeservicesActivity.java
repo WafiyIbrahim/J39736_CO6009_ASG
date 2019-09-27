@@ -1,5 +1,6 @@
 package com.example.predator.hi;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
@@ -14,8 +15,11 @@ import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class HomeservicesActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -61,6 +65,7 @@ public class HomeservicesActivity extends AppCompatActivity implements View.OnCl
         txtViewClientName.setText(account.getEmail());
 
         btnBookServices.setOnClickListener(this);
+
     }
 
     private void UserServicesBooking() {

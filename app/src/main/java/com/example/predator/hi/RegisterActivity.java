@@ -67,6 +67,8 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         final String userFirstName      = regTxtFirstNamename.getText().toString().trim();
         final String userLastName       = regTxtLastNamername.getText().toString().trim();
         final String usersMobNumb       = regTxtMobNumb.getText().toString().trim();
+        final String userStatus         = "NormalUser";
+
 
         //Validation process for empty FirstName
         if(TextUtils.isEmpty(userFirstName)){
@@ -137,7 +139,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                             //If successful, data will be stored in DB.
 
                             HuffazClient client = new HuffazClient(
-                                    emailAddress,userFirstName, userLastName, usersMobNumb
+                                    emailAddress,userFirstName, userLastName, usersMobNumb, userStatus
                             );
 
                              FirebaseDatabase.getInstance().getReference("HuffazClient")

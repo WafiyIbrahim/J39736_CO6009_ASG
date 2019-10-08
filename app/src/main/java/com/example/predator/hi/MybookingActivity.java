@@ -25,6 +25,7 @@ public class MybookingActivity extends AppCompatActivity {
     private DatabaseReference FirebaseBookingMengaji;
     private DatabaseReference FirebaseBookingServices;
     private DatabaseReference queryMengaji;
+    private DatabaseReference queryServices;
     ListView bookingMengajiList;
     ListView bookingServicesList;
     List<HuffazBookingClass> listMengaji;
@@ -37,12 +38,18 @@ public class MybookingActivity extends AppCompatActivity {
 
         firebaseAuth    = FirebaseAuth.getInstance();
 
-        FirebaseUser account = firebaseAuth.getCurrentUser();
+        final FirebaseUser account = firebaseAuth.getCurrentUser();
+        String accountUser = firebaseAuth.getCurrentUser().getUid();
 
-        FirebaseBookingMengaji    = FirebaseDatabase.getInstance().getReference("HuffazMengajiBooking"); //https://www.youtube.com/watch?v=CnT-KMgumtw  .child(account.getUid())
-        FirebaseBookingServices    = FirebaseDatabase.getInstance().getReference("HuffazServicesBooking");
+        //FirebaseBookingMengaji    = FirebaseDatabase.getInstance().getReference("HuffazMengajiBooking"); //https://www.youtube.com/watch?v=CnT-KMgumtw  .child(account.getUid())
 
-        queryMengaji = FirebaseBookingMengaji.child(account.getUid());
+        FirebaseBookingMengaji    = FirebaseDatabase.getInstance().getReference().child("HuffazMengajiBooking");
+        FirebaseBookingServices    = FirebaseDatabase.getInstance().getReference().child("HuffazServicesBooking");
+
+        //queryMengaji = FirebaseBookingMengaji.child("bookings");
+        queryMengaji = FirebaseBookingMengaji.child(accountUser);
+        queryServices = FirebaseBookingServices.child(accountUser);
+
 
         bookingMengajiList = (ListView) findViewById(R.id.bookingMengajiList);
         bookingServicesList = (ListView) findViewById(R.id.bookingServicesList);
@@ -57,6 +64,7 @@ public class MybookingActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
                 listMengaji.clear();
+
 
                 for (DataSnapshot bookingSnapshot : dataSnapshot.getChildren()){
                     HuffazBookingClass mengaji = bookingSnapshot.getValue(HuffazBookingClass.class);
@@ -77,7 +85,7 @@ public class MybookingActivity extends AppCompatActivity {
         });
 
         //Retrieve data Services
-        FirebaseBookingServices.addValueEventListener(new ValueEventListener() {
+        queryServices.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 

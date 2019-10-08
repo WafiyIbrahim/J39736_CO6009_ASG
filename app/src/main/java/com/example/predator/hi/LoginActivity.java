@@ -12,15 +12,23 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+import com.example.predator.hi.HuffazClient;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener{
 
     private FirebaseAuth firebaseAuth;
+    private DatabaseReference databaseReference;
     private ProgressDialog ProgressDialog;
     TextView forgotPassword;
     private EditText logTxtEmail;
@@ -35,10 +43,46 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         firebaseAuth    = FirebaseAuth.getInstance();
 
+
+
+        //FirebaseBooking.getReference().child("HuffazClient").child(accountUser);
+
         if (firebaseAuth.getCurrentUser() !=null){
-            finish();
-            startActivity(new Intent(getApplicationContext(), MenuActivity.class));
+
+            String accountUser = firebaseAuth.getCurrentUser().getUid();
+            databaseReference = FirebaseDatabase.getInstance().getReference().child("HuffazClient").child(accountUser);
+              databaseReference.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    String userStatus = dataSnapshot.child("userStatus").getValue().toString();
+                    if (userStatus.equals("Admin")){
+                        Intent goAdmin = new Intent(getApplicationContext(), AdminActivity.class);
+                        goAdmin.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        startActivity(goAdmin);
+                        finish();
+                    } else if (userStatus.equals("NormalUser")){
+                        Intent goUser = new Intent (getApplicationContext(), MenuActivity.class);
+                        goUser.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        startActivity(goUser);
+                        finish();
+                    }  else {
+                        Toast.makeText(LoginActivity.this, "Sorry. We could not log you in. Please try again", Toast.LENGTH_SHORT).show();
+                    }
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                }
+            });
+
+
+            } else {
+                    Toast.makeText(LoginActivity.this, "Welcome", Toast.LENGTH_SHORT).show();
         }
+
+
+
 
         ProgressDialog  = new ProgressDialog(this);
 
@@ -69,6 +113,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             return;
         }
 
+
         //ProgressDialog is use to prompt users -> registering in process
         ProgressDialog.setMessage("We are currently logging you in. Please wait.");
         ProgressDialog.show();
@@ -78,15 +123,44 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
+
                         ProgressDialog.dismiss();
+                        
                         //Checks whether the registration are success
+                        //https://stackoverflow.com/q/46372780
                         if(task.isSuccessful()){
-                            finish();
-                            startActivity(new Intent(getApplicationContext(), MenuActivity.class));
+                            String accountUser = firebaseAuth.getCurrentUser().getUid();
+                            databaseReference = FirebaseDatabase.getInstance().getReference().child("HuffazClient").child(accountUser);
+
+                            databaseReference.addValueEventListener(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                    String userStatus = dataSnapshot.child("userStatus").getValue().toString();
+                                    if (userStatus.equals("Admin")){
+                                        Intent goAdmin = new Intent(getApplicationContext(), AdminActivity.class);
+                                        goAdmin.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                        startActivity(goAdmin);
+                                        finish();
+                                    } else if (userStatus.equals("NormalUser")){
+                                        Intent goUser = new Intent (getApplicationContext(), MenuActivity.class);
+                                        goUser.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                        startActivity(goUser);
+                                        finish();
+                                    }  else {
+                                        Toast.makeText(LoginActivity.this, "Sorry. We could not log you in. Please try again", Toast.LENGTH_SHORT).show();
+                                    }
+                                }
+
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                }
+                            });
+
+                            /*finish();
+                            startActivity(new Intent(getApplicationContext(), MenuActivity.class));*/
                         }
-                        else {
-                            Toast.makeText(LoginActivity.this, "Sorry. We could not log you in. Please try again", Toast.LENGTH_SHORT).show();
-                        }
+
                     }
                 });
 

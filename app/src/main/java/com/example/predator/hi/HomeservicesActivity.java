@@ -41,13 +41,14 @@ public class HomeservicesActivity extends AppCompatActivity implements View.OnCl
         setContentView(R.layout.activity_homeservices);
 
         firebaseAuth    = FirebaseAuth.getInstance();
+        String accountUser = firebaseAuth.getCurrentUser().getUid();
 
         /*if (firebaseAuth.getCurrentUser() !=null){
             finish();
             startActivity(new Intent(getApplicationContext(), MengajiActivity.class));
         }*/
 
-        FirebaseBooking    = FirebaseDatabase.getInstance().getReference("HuffazServicesBooking");
+        FirebaseBooking    = FirebaseDatabase.getInstance().getReference("HuffazServicesBooking").child(accountUser);
 
         FirebaseUser account = firebaseAuth.getCurrentUser();
 
@@ -70,21 +71,24 @@ public class HomeservicesActivity extends AppCompatActivity implements View.OnCl
 
     private void UserServicesBooking() {
 
+        String key = FirebaseBooking.push().getKey(); //https://stackoverflow.com/a/37788893
+        String account = firebaseAuth.getCurrentUser().getUid();
         String eventTitle               = clientEvent.getText().toString().trim();
         String timePreference           = preferredTime.getText().toString().trim();
         String clientAddress            = EventAddress.getText().toString().trim();
         String chooseReligiousPackage   = spinnerPackage.getSelectedItem().toString();
         String chooseTeacher            = spinnerTeacher.getSelectedItem().toString();
         String chooseDay                = spinnerDay.getSelectedItem().toString();
+        String bookingStatus            = "Unapproved";
 
         if (!TextUtils.isEmpty(eventTitle)){
-            FirebaseUser account = firebaseAuth.getCurrentUser();
+           /* FirebaseUser account = firebaseAuth.getCurrentUser();
 
-            String bookingId = account.getUid();
+            String bookingId = account.getUid();*/
 
-            HuffazBookingServices servicesBooking = new HuffazBookingServices(eventTitle, timePreference, clientAddress, chooseReligiousPackage,chooseTeacher,chooseDay);
+            HuffazBookingServices servicesBooking = new HuffazBookingServices(account, eventTitle, timePreference, clientAddress, chooseReligiousPackage,chooseTeacher,chooseDay, bookingStatus);
 
-            FirebaseBooking.child(bookingId).setValue(servicesBooking);
+            FirebaseBooking.child(key).setValue(servicesBooking);
 
             Toast.makeText(this,"Booked", Toast.LENGTH_LONG).show();
         }else {

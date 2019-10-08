@@ -2,19 +2,26 @@ package com.example.predator.hi;
 
 public class HuffazBookingServices {
 
-    public String eventTitle, timePreference, clientAddress, chooseReligiousPackage,chooseTeacher,chooseDay;
+    public String account, eventTitle, timePreference, clientAddress, chooseReligiousPackage,chooseTeacher,chooseDay, bookingStatus;
 
     public HuffazBookingServices(){
 
     }
 
-    public HuffazBookingServices(String eventTitle, String timePreference, String clientAddress, String chooseReligiousPackage, String chooseTeacher, String chooseDay) {
+    public HuffazBookingServices(String account, String eventTitle, String timePreference, String clientAddress, String chooseReligiousPackage, String chooseTeacher, String chooseDay, String bookingStatus) {
+        this.account = account;
         this.eventTitle = eventTitle;
         this.timePreference = timePreference;
         this.clientAddress = clientAddress;
         this.chooseReligiousPackage = chooseReligiousPackage;
         this.chooseTeacher = chooseTeacher;
         this.chooseDay = chooseDay;
+        this.bookingStatus = bookingStatus;
+    }
+
+    public String getAccount() {
+
+        return account;
     }
 
     public String getEventTitle() {
@@ -39,5 +46,9 @@ public class HuffazBookingServices {
 
     public String getChooseDay() {
         return chooseDay;
+    }
+
+    public String getBookingStatus() {
+        return bookingStatus;
     }
 }

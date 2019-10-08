@@ -2,19 +2,20 @@ package com.example.predator.hi;
 
 public class HuffazBookingClass {
 
-    public String account, timePreference, clientAddress, choosePackage,chooseTeacher,chooseDay;
+    public String account, timePreference, clientAddress, choosePackage,chooseTeacher,chooseDay, bookingStatus;
 
     public HuffazBookingClass(){
 
     }
 
-    public HuffazBookingClass(String account, String timePreference, String clientAddress, String choosePackage, String chooseTeacher, String chooseDay) {
+    public HuffazBookingClass(String account, String timePreference, String clientAddress, String choosePackage, String chooseTeacher, String chooseDay, String bookingStatus) {
         this.account = account;
         this.timePreference = timePreference;
         this.clientAddress = clientAddress;
         this.choosePackage = choosePackage;
         this.chooseTeacher = chooseTeacher;
         this.chooseDay = chooseDay;
+        this.bookingStatus = bookingStatus;
     }
 
     public String getAccount() {
@@ -44,6 +45,10 @@ public class HuffazBookingClass {
     public String getChooseDay() {
 
         return chooseDay;
+    }
+
+    public String getBookingStatus() {
+        return bookingStatus;
     }
 }
 

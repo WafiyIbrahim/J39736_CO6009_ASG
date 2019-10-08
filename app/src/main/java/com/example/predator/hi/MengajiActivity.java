@@ -45,13 +45,14 @@ public class MengajiActivity extends AppCompatActivity implements View.OnClickLi
         firebaseAuth    = FirebaseAuth.getInstance();
 
         account = firebaseAuth.getCurrentUser().toString();
+        String accountUser = firebaseAuth.getCurrentUser().getUid();
 
         /*if (firebaseAuth.getCurrentUser() !=null){
             finish();
             startActivity(new Intent(getApplicationContext(), MengajiActivity.class));
         }*/
 
-        FirebaseBooking    = FirebaseDatabase.getInstance().getReference("HuffazMengajiBooking");
+        FirebaseBooking    = FirebaseDatabase.getInstance().getReference("HuffazMengajiBooking").child(accountUser);
 
         FirebaseUser account = firebaseAuth.getCurrentUser();
         HomeAddress          = (EditText) findViewById(R.id.HomeAddress);
@@ -78,6 +79,7 @@ public class MengajiActivity extends AppCompatActivity implements View.OnClickLi
         String choosePackage  = spinnerPackage.getSelectedItem().toString();
         String chooseTeacher  = spinnerTeacher.getSelectedItem().toString();
         String chooseDay      = spinnerDay.getSelectedItem().toString();
+        String bookingStatus = "Unapproved";
 
       if(!TextUtils.isEmpty(timePreference)){
 
@@ -85,7 +87,7 @@ public class MengajiActivity extends AppCompatActivity implements View.OnClickLi
 
           String bookingId = account.getUid();*/
 
-          HuffazBookingClass classBooking = new HuffazBookingClass(account, timePreference, clientAddress, choosePackage,chooseTeacher,chooseDay);
+          HuffazBookingClass classBooking = new HuffazBookingClass(account, timePreference, clientAddress, choosePackage,chooseTeacher,chooseDay, bookingStatus);
 
           /*FirebaseUser account = firebaseAuth.getCurrentUser();*/
 
@@ -129,7 +131,7 @@ public class MengajiActivity extends AppCompatActivity implements View.OnClickLi
           /*ProgressDialog.setMessage("We are currently booking in your class. Please wait.");
           ProgressDialog.show();*/
 
-          Toast.makeText(this,"Okkkkkk", Toast.LENGTH_LONG).show();
+          Toast.makeText(this,"Your booking is successful", Toast.LENGTH_LONG).show();
       }else {
           Toast.makeText(this,"pleaseeeeeeee", Toast.LENGTH_LONG).show();
       }

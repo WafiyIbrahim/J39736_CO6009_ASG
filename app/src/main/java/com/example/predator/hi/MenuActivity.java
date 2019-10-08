@@ -67,7 +67,7 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
         }
 
         if (v == btn_MyBooking){
-            startActivity(new Intent(this, MybookingActivity.class));
+            startActivity(new Intent(this, Checkbooking.class));
             //finish();
         }
     }

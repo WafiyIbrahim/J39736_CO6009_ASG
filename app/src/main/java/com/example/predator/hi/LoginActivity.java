@@ -78,7 +78,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
 
             } else {
-                    Toast.makeText(LoginActivity.this, "Welcome", Toast.LENGTH_SHORT).show();
+                Toast.makeText(LoginActivity.this, "Welcome", Toast.LENGTH_SHORT).show();
         }
 
 

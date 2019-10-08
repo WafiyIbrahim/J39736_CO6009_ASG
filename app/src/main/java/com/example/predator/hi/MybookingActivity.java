@@ -23,13 +23,9 @@ public class MybookingActivity extends AppCompatActivity {
 
     private FirebaseAuth firebaseAuth;
     private DatabaseReference FirebaseBookingMengaji;
-    private DatabaseReference FirebaseBookingServices;
     private DatabaseReference queryMengaji;
-    private DatabaseReference queryServices;
     ListView bookingMengajiList;
-    ListView bookingServicesList;
     List<HuffazBookingClass> listMengaji;
-    List<HuffazBookingServices> listServices;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,22 +37,13 @@ public class MybookingActivity extends AppCompatActivity {
         final FirebaseUser account = firebaseAuth.getCurrentUser();
         String accountUser = firebaseAuth.getCurrentUser().getUid();
 
-        //FirebaseBookingMengaji    = FirebaseDatabase.getInstance().getReference("HuffazMengajiBooking"); //https://www.youtube.com/watch?v=CnT-KMgumtw  .child(account.getUid())
-
         FirebaseBookingMengaji    = FirebaseDatabase.getInstance().getReference().child("HuffazMengajiBooking");
-        FirebaseBookingServices    = FirebaseDatabase.getInstance().getReference().child("HuffazServicesBooking");
 
-        //queryMengaji = FirebaseBookingMengaji.child("bookings");
         queryMengaji = FirebaseBookingMengaji.child(accountUser);
-        queryServices = FirebaseBookingServices.child(accountUser);
-
 
         bookingMengajiList = (ListView) findViewById(R.id.bookingMengajiList);
-        bookingServicesList = (ListView) findViewById(R.id.bookingServicesList);
-
 
         listMengaji  = new ArrayList<>();
-        listServices = new ArrayList<>();
 
         //Retrieve data mengaji
         queryMengaji.addValueEventListener(new ValueEventListener() {
@@ -84,33 +71,6 @@ public class MybookingActivity extends AppCompatActivity {
             }
         });
 
-        //Retrieve data Services
-        queryServices.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
-                listServices.clear();
-
-                for (DataSnapshot bookingSnapshot : dataSnapshot.getChildren()){
-                    HuffazBookingServices homeServices = bookingSnapshot.getValue(HuffazBookingServices.class);
-
-
-                    listServices.add(homeServices);
-                }
-
-
-                ServicesBookingList adapter = new ServicesBookingList(MybookingActivity.this, listServices);
-
-                bookingServicesList.setAdapter(adapter);
-
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
     }
 
     @Override

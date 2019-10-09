@@ -6,34 +6,47 @@
     android:layout_height="match_parent"
     tools:context=".MybookingActivity">
 
-    <TextView
-        android:id="@+id/textViewMengaji"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:text="Statement of Book: Mengaji"
-        app:layout_constraintBottom_toTopOf="@+id/bookingMengajiList"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.639" />
 
-    <ListView
+            <TextView
+                android:id="@+id/textBookingPageClass"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="MENGAJI CLASSES BOOKINGS"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/bookingMengajiList"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/bookingMengajiList"
-        android:layout_width="352dp"
-        android:layout_height="464dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="52dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="26dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.488"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textBookingPageClass" />
 
 
+
+
+    <!-- <ListView
+         android:id="@+id/bookingMengajiList"
+         android:layout_width="352dp"
+         android:layout_height="464dp"
+         tools:layout_editor_absoluteX="29dp"
+         tools:layout_editor_absoluteY="85dp" />-->
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

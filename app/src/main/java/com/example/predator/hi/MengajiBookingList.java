@@ -35,7 +35,7 @@ public class MengajiBookingList extends ArrayAdapter <HuffazBookingClass> {
         TextView spinnerTeacher     = (TextView) bookingMengajiList.findViewById(R.id.spinnerTeacher);
         TextView spinnerDay         = (TextView) bookingMengajiList.findViewById(R.id.spinnerDay);
         TextView preferredTime      = (TextView) bookingMengajiList.findViewById(R.id.preferredTime);
-        TextView HomeAddress        = (TextView) bookingMengajiList.findViewById(R.id.HomeAddress);
+        TextView HomeAddress        = (TextView) bookingMengajiList.findViewById(R.id.EventAddress);
 
         HuffazBookingClass mengaji = listMengaji.get(position);
 

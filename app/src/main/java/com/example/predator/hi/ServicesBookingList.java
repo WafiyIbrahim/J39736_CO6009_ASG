@@ -37,7 +37,7 @@ public class ServicesBookingList extends ArrayAdapter <HuffazBookingServices> {
         TextView spinnerTeacher     = (TextView) bookingServicesList.findViewById(R.id.spinnerTeacher);
         TextView spinnerDay         = (TextView) bookingServicesList.findViewById(R.id.spinnerDay);
         TextView preferredTime      = (TextView) bookingServicesList.findViewById(R.id.preferredTime);
-        TextView HomeAddress        = (TextView) bookingServicesList.findViewById(R.id.HomeAddress);
+        TextView HomeAddress        = (TextView) bookingServicesList.findViewById(R.id.EventAddress);
 
         HuffazBookingServices services = listServices.get(position);
 

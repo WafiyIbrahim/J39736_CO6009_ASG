@@ -50,7 +50,7 @@
                 android:layout_marginTop="5dp"
                 android:text="Teacher:"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textHomeAddress"
+                app:layout_constraintTop_toBottomOf="@+id/textEventAddress"
 
                 tools:layout_editor_absoluteX="16dp"
                 tools:layout_editor_absoluteY="58dp" />
@@ -63,7 +63,7 @@
                 android:layout_marginTop="5dp"
                 android:text="TextView"
                 app:layout_constraintStart_toEndOf="@+id/textTeacher"
-                app:layout_constraintTop_toBottomOf="@+id/HomeAddress"
+                app:layout_constraintTop_toBottomOf="@+id/EventAddress"
 
                 tools:layout_editor_absoluteX="79dp"
                 tools:layout_editor_absoluteY="58dp" />
@@ -119,7 +119,7 @@
                 app:layout_constraintStart_toEndOf="@+id/textTime" />
 
             <TextView
-                android:id="@+id/textHomeAddress"
+                android:id="@+id/textEventAddress"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -132,13 +132,13 @@
                 tools:layout_editor_absoluteY="35dp" />
 
             <TextView
-                android:id="@+id/HomeAddress"
+                android:id="@+id/EventAddress"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="5dp"
                 android:text="TextView"
-                app:layout_constraintStart_toEndOf="@+id/textHomeAddress"
+                app:layout_constraintStart_toEndOf="@+id/textEventAddress"
                 app:layout_constraintTop_toBottomOf="@+id/spinnerPackage"
 
                 tools:layout_editor_absoluteX="79dp"

@@ -1,4 +1,4 @@
-package com.example.predator.hi;
+package com.example.predator.hi.Models;
 
 public class HuffazBookingClass {
 

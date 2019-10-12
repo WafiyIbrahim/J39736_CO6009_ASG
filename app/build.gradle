@@ -6,6 +6,7 @@ android {
         applicationId "com.example.predator.hi"
         minSdkVersion 19
         targetSdkVersion 28
+        multiDexEnabled true
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -32,6 +33,13 @@ dependencies {
     implementation "androidx.legacy:legacy-support-v4:1.0.0"
     implementation "androidx.recyclerview:recyclerview:1.0.0"
     implementation "androidx.cardview:cardview:1.0.0"
+
+    // FireStore and FirebaseUI Cloud FireStore
+    implementation 'com.google.firebase:firebase-firestore:21.1.1'
+    implementation 'com.firebaseui:firebase-ui-firestore:6.0.2'
+
+    def multidex_version = "2.0.1"
+    implementation "androidx.multidex:multidex:$multidex_version"
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'

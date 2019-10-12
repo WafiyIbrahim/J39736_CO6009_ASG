@@ -5,58 +5,49 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
 
-import com.firebase.ui.database.FirebaseRecyclerAdapter;
-import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.example.predator.hi.Models.HuffazBookingClass;
+import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
+import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-
-import java.util.ArrayList;
-import java.util.List;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
 
 public class MybookingActivity extends AppCompatActivity {
 
 
     private FirebaseAuth firebaseAuth;
-    private DatabaseReference FirebaseBookingMengaji;
-    private DatabaseReference queryMengaji;
+    private FirebaseFirestore db;
+    private Query queryMengaji;
+
     //ListView bookingMengajiList;
     //List<HuffazBookingClass> listMengaji;
     RecyclerView bookingMengajiList;
-    FirebaseRecyclerAdapter adapter;
+    FirestoreRecyclerAdapter adapter;
 
-    //@SuppressLint("WrongConstant")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mybooking);
 
         firebaseAuth    = FirebaseAuth.getInstance();
+        db = FirebaseFirestore.getInstance();
 
         final FirebaseUser account = firebaseAuth.getCurrentUser();
         String accountUser = firebaseAuth.getCurrentUser().getUid();
 
-        FirebaseBookingMengaji    = FirebaseDatabase.getInstance().getReference().child("HuffazMengajiBooking");
-
-        queryMengaji = FirebaseBookingMengaji.child(accountUser);
+        queryMengaji = db.collection("bookingMengaji").whereEqualTo("account", accountUser);
 
         bookingMengajiList = (RecyclerView) findViewById(R.id.bookingMengajiList);
 
-        FirebaseRecyclerOptions<HuffazBookingClass> options = new FirebaseRecyclerOptions.Builder<HuffazBookingClass>().setQuery(queryMengaji, HuffazBookingClass.class).build();
+        FirestoreRecyclerOptions<HuffazBookingClass> options = new FirestoreRecyclerOptions.Builder<HuffazBookingClass>().setQuery(queryMengaji, HuffazBookingClass.class).build();
 
-        adapter = new FirebaseRecyclerAdapter<HuffazBookingClass, HuffazBookingClassHolder>(options) {
+        adapter = new FirestoreRecyclerAdapter<HuffazBookingClass, HuffazBookingClassHolder>(options) {
 
             @NonNull
             @Override

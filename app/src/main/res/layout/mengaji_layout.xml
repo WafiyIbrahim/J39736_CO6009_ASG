@@ -23,9 +23,9 @@
                 android:layout_marginStart="12dp"
                 android:layout_marginTop="8dp"
                 android:text="Package:"
+                android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-
                 tools:layout_editor_absoluteX="11dp"
                 tools:layout_editor_absoluteY="8dp" />
 
@@ -49,9 +49,9 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="5dp"
                 android:text="Teacher:"
+                android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textEventAddress"
-
                 tools:layout_editor_absoluteX="16dp"
                 tools:layout_editor_absoluteY="58dp" />
 
@@ -73,11 +73,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="45dp"
-
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginBottom="8dp"
                 android:text="Day:"
+                android:textStyle="bold"
                 app:layout_constraintBottom_toTopOf="@+id/textTime"
                 app:layout_constraintEnd_toStartOf="@+id/spinnerDay"
                 app:layout_constraintStart_toStartOf="parent"
@@ -101,9 +101,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="36dp"
-
                 android:layout_marginBottom="8dp"
                 android:text="Time:"
+                android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
 
@@ -125,9 +125,9 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="5dp"
                 android:text="Address:"
+                android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textPackage"
-
                 tools:layout_editor_absoluteX="16dp"
                 tools:layout_editor_absoluteY="35dp" />
 
@@ -148,26 +148,46 @@
                 android:id="@+id/textbookingStatus"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-
-                android:layout_marginStart="212dp"
-                android:layout_marginTop="82dp"
-                android:layout_marginBottom="36dp"
+                android:layout_marginEnd="78dp"
                 android:text="Status:"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="1.0" />
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/bookingStatus"
+                app:layout_constraintEnd_toEndOf="parent" />
 
             <TextView
                 android:id="@+id/bookingStatus"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="34dp"
+                android:layout_marginBottom="3dp"
+                android:textStyle="bold"
+                android:textColor="@color/colorYellow"
+                app:layout_constraintBottom_toTopOf="@+id/imageButton"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:text="Not Accepted" />
 
-                android:layout_marginStart="4dp"
-                android:layout_marginTop="82dp"
-                app:layout_constraintStart_toEndOf="@+id/textbookingStatus"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:text="Waiting approval" />
+            <ImageButton
+                android:id="@+id/imageButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/imageButton2"
+                app:srcCompat="@android:drawable/ic_menu_edit"
+                tools:layout_editor_absoluteX="290dp"
+                tools:layout_editor_absoluteY="96dp" />
+
+            <ImageButton
+                android:id="@+id/imageButton2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="9dp"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:srcCompat="@android:drawable/ic_menu_delete"
+                tools:layout_editor_absoluteX="346dp"
+                tools:layout_editor_absoluteY="96dp" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

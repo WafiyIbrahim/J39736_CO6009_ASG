@@ -1,4 +1,4 @@
-package com.example.predator.hi;
+package com.example.predator.hi.Models;
 
 import android.app.Activity;
 import android.view.LayoutInflater;
@@ -9,6 +9,8 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+
+import com.example.predator.hi.R;
 
 import java.util.List;
 

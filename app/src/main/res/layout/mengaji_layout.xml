@@ -23,6 +23,7 @@
                 android:layout_marginStart="12dp"
                 android:layout_marginTop="8dp"
                 android:text="Package:"
+                android:textColor="@color/colorAccent"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -36,6 +37,7 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:text="TextView"
+                android:textColor="@color/colorAccent"
                 app:layout_constraintStart_toEndOf="@+id/textPackage"
                 app:layout_constraintTop_toTopOf="parent"
 
@@ -49,6 +51,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="5dp"
                 android:text="Teacher:"
+                android:textColor="@color/colorAccent"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textEventAddress"
@@ -62,6 +65,7 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="5dp"
                 android:text="TextView"
+                android:textColor="@color/colorAccent"
                 app:layout_constraintStart_toEndOf="@+id/textTeacher"
                 app:layout_constraintTop_toBottomOf="@+id/EventAddress"
 
@@ -77,6 +81,7 @@
                 android:layout_marginEnd="8dp"
                 android:layout_marginBottom="8dp"
                 android:text="Day:"
+                android:textColor="@color/colorAccent"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toTopOf="@+id/textTime"
                 app:layout_constraintEnd_toStartOf="@+id/spinnerDay"
@@ -90,8 +95,8 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="8dp"
-
                 android:text="TextView"
+                android:textColor="@color/colorAccent"
                 app:layout_constraintBottom_toTopOf="@+id/preferredTime"
                 app:layout_constraintStart_toEndOf="@+id/textDay"
                 app:layout_constraintTop_toBottomOf="@+id/spinnerTeacher" />
@@ -103,6 +108,7 @@
                 android:layout_marginStart="36dp"
                 android:layout_marginBottom="8dp"
                 android:text="Time:"
+                android:textColor="@color/colorAccent"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
@@ -112,9 +118,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-
                 android:layout_marginBottom="8dp"
                 android:text="TextView"
+                android:textColor="@color/colorAccent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/textTime" />
 
@@ -125,6 +131,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="5dp"
                 android:text="Address:"
+                android:textColor="@color/colorAccent"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textPackage"
@@ -138,6 +145,7 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="5dp"
                 android:text="TextView"
+                android:textColor="@color/colorAccent"
                 app:layout_constraintStart_toEndOf="@+id/textEventAddress"
                 app:layout_constraintTop_toBottomOf="@+id/spinnerPackage"
 
@@ -150,6 +158,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="78dp"
                 android:text="Status:"
+                android:textColor="@color/colorAccent"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toTopOf="@+id/bookingStatus"
                 app:layout_constraintEnd_toEndOf="parent" />
@@ -167,18 +176,18 @@
                 tools:text="Not Accepted" />
 
             <ImageButton
-                android:id="@+id/imageButton"
+                android:id="@+id/btn_editBooking"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/imageButton2"
+                app:layout_constraintEnd_toStartOf="@+id/btn_deleteBooking"
                 app:srcCompat="@android:drawable/ic_menu_edit"
                 tools:layout_editor_absoluteX="290dp"
                 tools:layout_editor_absoluteY="96dp" />
 
             <ImageButton
-                android:id="@+id/imageButton2"
+                android:id="@+id/btn_deleteBooking"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="9dp"

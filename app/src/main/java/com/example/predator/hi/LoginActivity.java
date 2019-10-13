@@ -52,13 +52,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         ProgressDialog  = new ProgressDialog(this);
 
-        forgotPassword      = (TextView) findViewById(R.id.forgotPassword);
         logTxtEmail         = (EditText) findViewById(R.id.logTxtEmail);
         logTxtPassword      = (EditText) findViewById(R.id.logTxtPassword);
         btn_Register        = (Button)   findViewById(R.id. btn_Register);
         btn_login           = (Button)   findViewById(R.id. btn_login);
 
-        forgotPassword.setOnClickListener(this);
         btn_Register.setOnClickListener(this);
         btn_login.setOnClickListener(this);
     }
@@ -139,8 +137,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             startActivity(new Intent(this, RegisterActivity.class));
         }
 
-        if (v == forgotPassword){
-        }
 
     }
 }

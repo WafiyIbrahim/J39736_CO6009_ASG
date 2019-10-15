@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -68,6 +69,13 @@ public class MybookingActivity extends AppCompatActivity {
         void setStatus (String servicesStatus){
             TextView textView = view.findViewById(R.id.bookingStatus);
             textView.setText(servicesStatus);
+            if (servicesStatus.equals("Accepted")){
+                textView.setTextColor(Color.parseColor("#008000"));
+            }else if (servicesStatus.equals("Not Accepted")){
+                textView.setTextColor(Color.parseColor("#FF0000"));
+            }else {
+                textView.setTextColor(Color.parseColor("#FFC107"));
+            }
         }
 
         void setBtnFunctions(){

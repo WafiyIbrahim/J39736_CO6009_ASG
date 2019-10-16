@@ -1,6 +1,8 @@
 package com.example.predator.hi.Models;
 
-public class HuffazBookingClass {
+import java.io.Serializable;
+
+public class HuffazBookingClass implements Serializable {
 
     public String account, timePreference, clientAddress, choosePackage,chooseTeacher,chooseDay, bookingStatus;
 
@@ -17,6 +19,8 @@ public class HuffazBookingClass {
         this.chooseDay = chooseDay;
         this.bookingStatus = bookingStatus;
     }
+
+
 
     public String getAccount() {
         return account;

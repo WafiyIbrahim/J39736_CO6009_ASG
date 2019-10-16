@@ -44,7 +44,7 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
         btn_booking = (CardView) findViewById(R.id. btn_booking);
         btn_MyBooking = (CardView) findViewById(R.id.btn_MyBooking);
 
-       usersEmail.setText("Welcome " +account.getEmail());
+       usersEmail.setText("Welcome" + " " + account.getEmail());
 
 
         btn_logout.setOnClickListener(this);

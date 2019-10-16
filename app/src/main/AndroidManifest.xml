@@ -11,7 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AdminacceptclassActivity"></activity>
+        <activity android:name=".UpdateadminclassActivity"></activity>
+        <activity android:name=".AdminacceptservicesActivity" />
+        <activity android:name=".AdminacceptclassActivity" />
         <activity android:name=".AdminbookingclassActivity" />
         <activity android:name=".AdminbookingservicesActivity" />
         <activity android:name=".Checkbooking" />

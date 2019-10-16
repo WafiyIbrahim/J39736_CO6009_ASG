@@ -67,10 +67,13 @@ public class MybookingActivity extends AppCompatActivity {
         }
 
         void setStatus (String servicesStatus){
+            ImageButton btn_editBooking = view.findViewById(R.id.btn_editBooking);
             TextView textView = view.findViewById(R.id.bookingStatus);
             textView.setText(servicesStatus);
             if (servicesStatus.equals("Accepted")){
+                //https://stackoverflow.com/a/6173541
                 textView.setTextColor(Color.parseColor("#008000"));
+                btn_editBooking.setVisibility(View.GONE);
             }else if (servicesStatus.equals("Not Accepted")){
                 textView.setTextColor(Color.parseColor("#FF0000"));
             }else {

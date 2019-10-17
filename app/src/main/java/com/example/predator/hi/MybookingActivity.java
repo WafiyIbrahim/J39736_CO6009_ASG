@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
@@ -92,6 +94,16 @@ public class MybookingActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     deleteBooking(docId);
+                }
+            });
+
+            btn_editBooking.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Context context = v.getContext();
+                    Intent intent = new Intent(context, UpdateuserclassActivity.class);
+                    intent.putExtra("docId", docId);
+                    context.startActivity(intent);
                 }
             });
 

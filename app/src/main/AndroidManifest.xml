@@ -7,11 +7,14 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label="GoHuffaz"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".UpdateadminclassActivity"></activity>
+        <activity android:name=".UpdateuserservicesActivity"></activity>
+        <activity android:name=".UpdateuserclassActivity" />
+        <activity android:name=".UpdateadminservicesActivity" />
+        <activity android:name=".UpdateadminclassActivity" />
         <activity android:name=".AdminacceptservicesActivity" />
         <activity android:name=".AdminacceptclassActivity" />
         <activity android:name=".AdminbookingclassActivity" />

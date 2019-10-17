@@ -10,13 +10,14 @@
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="#4682B4">
         
         <RelativeLayout
             android:layout_width="fill_parent"
             android:layout_height="fill_parent">
 
-            <LinearLayout
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="180dp"
                 android:gravity="center"
@@ -27,17 +28,16 @@
                     android:id="@+id/usersEmail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="45dp"
+                    android:layout_marginEnd="56dp"
+                    android:text="User's Email"
                     android:textAlignment="center"
-                    android:textSize="18sp"
-                    android:layout_marginTop="20dp"
                     android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:text="User's Email" />
+                    android:textSize="18sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-                <ImageView
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:src="@drawable/logoloading"/>
-            </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -55,8 +55,8 @@
 
                         <androidx.cardview.widget.CardView
                             android:id="@+id/btn_booking"
-                            android:layout_width="160dp"
-                            android:layout_height="190dp"
+                            android:layout_width="130dp"
+                            android:layout_height="160dp"
                             android:layout_margin="10dp"
                             android:foreground="?android:attr/selectableItemBackground"
                             android:clickable="true">
@@ -85,8 +85,8 @@
 
                     <androidx.cardview.widget.CardView
                         android:id="@+id/btn_MyBooking"
-                        android:layout_width="160dp"
-                        android:layout_height="190dp"
+                        android:layout_width="130dp"
+                        android:layout_height="160dp"
                         android:layout_margin="10dp"
                         android:foreground="?android:attr/selectableItemBackground"
                         android:clickable="true">
@@ -122,8 +122,9 @@
                     android:orientation="horizontal">
 
                     <androidx.cardview.widget.CardView
-                        android:layout_width="160dp"
-                        android:layout_height="190dp"
+                        android:id="@+id/btn_iLearn"
+                        android:layout_width="130dp"
+                        android:layout_height="160dp"
                         android:layout_margin="10dp"
                         android:foreground="?android:attr/selectableItemBackground"
                         android:clickable="true">
@@ -152,8 +153,8 @@
 
                     <androidx.cardview.widget.CardView
                         android:id="@+id/btn_logout"
-                        android:layout_width="160dp"
-                        android:layout_height="190dp"
+                        android:layout_width="130dp"
+                        android:layout_height="160dp"
                         android:layout_margin="10dp"
                         android:foreground="?android:attr/selectableItemBackground"
                         android:clickable="true">

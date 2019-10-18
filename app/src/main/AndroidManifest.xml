@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".UpdateuserservicesActivity"></activity>
+        <activity android:name=".MynewsActivity"></activity>
+        <activity android:name=".UpdateuserservicesActivity" />
         <activity android:name=".UpdateuserclassActivity" />
         <activity android:name=".UpdateadminservicesActivity" />
         <activity android:name=".UpdateadminclassActivity" />

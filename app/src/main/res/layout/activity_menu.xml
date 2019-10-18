@@ -134,7 +134,7 @@
                     android:orientation="horizontal">
 
                     <androidx.cardview.widget.CardView
-                        android:id="@+id/btn_iLearn"
+                        android:id="@+id/btn_myNews"
                         android:layout_width="130dp"
                         android:layout_height="160dp"
                         android:layout_margin="10dp"
@@ -149,15 +149,14 @@
                             <ImageView
                                 android:layout_width="65dp"
                                 android:layout_height="65dp"
-                                android:background="@drawable/ovalfour"
-                                android:padding="10dp"
-                                android:src="@drawable/ic_book_black"/>
+                                android:background="@drawable/news"
+                                android:padding="10dp"/>
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:textStyle="bold"
                                 android:layout_marginTop="15dp"
-                                android:text="iLearn"/>
+                                android:text="What's Up"/>
 
                         </LinearLayout>
 

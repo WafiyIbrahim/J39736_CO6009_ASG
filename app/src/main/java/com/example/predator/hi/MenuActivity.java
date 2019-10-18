@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import com.example.predator.hi.Models.MyNews;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -23,6 +24,7 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
     private CardView btn_logout;
     private CardView btn_booking;
     private CardView btn_MyBooking;
+    private CardView btn_myNews;
     TextView usersEmail;
 
     @Override
@@ -39,10 +41,11 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
 
         FirebaseUser account = firebaseAuth.getCurrentUser();
 
-        usersEmail = (TextView) findViewById(R.id. usersEmail);
-        btn_logout = (CardView) findViewById(R.id. btn_logout);
-        btn_booking = (CardView) findViewById(R.id. btn_booking);
-        btn_MyBooking = (CardView) findViewById(R.id.btn_MyBooking);
+        usersEmail      = (TextView) findViewById(R.id. usersEmail);
+        btn_logout      = (CardView) findViewById(R.id. btn_logout);
+        btn_booking     = (CardView) findViewById(R.id. btn_booking);
+        btn_MyBooking   = (CardView) findViewById(R.id.btn_MyBooking);
+        btn_myNews      = (CardView) findViewById(R.id.btn_myNews);
 
        usersEmail.setText("Welcome" + " " + account.getEmail());
 
@@ -50,6 +53,7 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
         btn_logout.setOnClickListener(this);
         btn_booking.setOnClickListener(this);
         btn_MyBooking.setOnClickListener(this);
+        btn_myNews.setOnClickListener(this);
 
     }
 
@@ -68,6 +72,11 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
 
         if (v == btn_MyBooking){
             startActivity(new Intent(this, Checkbooking.class));
+            //finish();
+        }
+
+        if (v == btn_myNews){
+            startActivity(new Intent(this, MynewsActivity.class));
             //finish();
         }
     }
